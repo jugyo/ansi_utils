@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "ansi_utils"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{ANSI escape code utils.}
+    gem.description = %Q{ANSI escape code utils. Move cursor, Erase data, etc...}
     gem.email = "jugyo.org@gmail.com"
     gem.homepage = "http://github.com/jugyo/ansi_utils"
     gem.authors = ["jugyo"]
