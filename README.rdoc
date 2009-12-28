@@ -6,6 +6,16 @@ ANSI escape code utils.
 
   gem install ansi_utils
 
+== Usage
+
+  require 'ansi_utils'
+  include AnsiUtils
+  erase_screen :all
+  (1..10).each do |i|
+    move i, i
+    print '.'
+  end
+
 == Copyright
 
 Copyright (c) 2009 jugyo. See LICENSE for details.
