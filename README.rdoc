@@ -2,6 +2,10 @@
 
 ANSI escape code utils.
 
+== Installation
+
+  gem install ansi_utils
+
 == Copyright
 
 Copyright (c) 2009 jugyo. See LICENSE for details.
