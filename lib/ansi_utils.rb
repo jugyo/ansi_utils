@@ -1,3 +1,23 @@
+if RUBY_VERSION < '1.8.7'
+  class String
+    def each_line
+      split("\n")
+    end
+  end
+
+  class Symbol
+    def to_proc(*s)
+      lambda {|i| i.__send__(self, *s) }
+    end
+  end
+end
+
+class String
+  def words
+    split(' ')
+  end
+end
+
 module AnsiUtils
   extend self
 
@@ -8,7 +28,7 @@ module AnsiUtils
     E next_line
     F prev_line
     G move_to_column
-  '.strip.split("\n").map{|s| s.split(' ')}.each do |i|
+  '.strip.each_line.map(&:words).each do |i|
     code, method = *i
     class_eval <<-DELIM
       def #{method}(num = nil)
@@ -22,7 +42,7 @@ module AnsiUtils
     u restore_position
     ?25l hide_cursor
     ?25h show_cursor
-  '.strip.split("\n").map{|s| s.split(' ')}.each do |i|
+  '.strip.each_line.map(&:words).each do |i|
     code, method = *i
     class_eval <<-DELIM
       def #{method}
@@ -54,9 +74,8 @@ module AnsiUtils
   private
 
   def erase_type(type)
-    @erase_type ||= {:after => 0, :before => 1, :all => 2}
-    raise ArgumentError, "invalid type: #{type}" unless @erase_type.key?(type)
-    @erase_type[type]
+    (@erase_type ||= {:after => 0, :before => 1, :all => 2})[type] or
+      raise ArgumentError, "invalid type: #{type}"
   end
 
   def output(code, *args)
