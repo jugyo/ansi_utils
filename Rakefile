@@ -9,8 +9,7 @@ begin
     gem.description = %Q{ANSI escape code utils. Move cursor, Erase data, etc...}
     gem.email = "jugyo.org@gmail.com"
     gem.homepage = "http://github.com/jugyo/ansi_utils"
-    gem.authors = ["jugyo"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.authors = ["jugyo", "ujihisa"]
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 rescue LoadError
