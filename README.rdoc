@@ -18,7 +18,7 @@ ANSI escape code utils.
 
 == TODO
 
- * Write complete tests
+* Write complete tests
 
 == Copyright
 
