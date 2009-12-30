@@ -16,6 +16,10 @@ ANSI escape code utils.
     print '.'
   end
 
+== TODO
+
+ * Write complete tests
+
 == Copyright
 
 Copyright (c) 2009 jugyo. See LICENSE for details.
